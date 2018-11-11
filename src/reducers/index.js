@@ -1,8 +1,9 @@
-import { ADD_CLIENTS, SELECT_CLIENT } from '../constants/action-types';
+import { ADD_CLIENTS, SELECT_CLIENT, SEARCH_ITEM } from '../constants/action-types';
 
 const initialState = {
     clients: [],
     clientIndex: null,
+    clientToSearch: '',
 }
 
 export const rootReducer = (state = initialState, action) => {
@@ -16,6 +17,11 @@ export const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 clientIndex: action.payload
+            };
+        case SEARCH_ITEM:
+            return {
+                ...state,
+                clientToSearch: action.payload
             };
         default: 
             return state;

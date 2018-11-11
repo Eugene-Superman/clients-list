@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addClients } from '../../actions';
 
+import SearchInput from '../../components/SearchInput';
 import ClientsList from '../../components/ClientsList';
 
 class Sidebar extends Component {
@@ -25,7 +26,10 @@ class Sidebar extends Component {
     render(){
         const { clients } = this.props;
         return (
-            <ClientsList clients={clients} />
+            <div>
+                <SearchInput />
+                <ClientsList clients={clients} />
+            </div>
         )
     }
 }
