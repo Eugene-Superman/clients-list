@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { selectClient } from '../../actions';
+import { Image } from 'semantic-ui-react'
 
 class ClientsList extends Component {
     handleClick(index){
@@ -30,13 +31,15 @@ class ClientsList extends Component {
             listForDisplaying = clients;
         }
         return (
-            <div>
+            <div className="list-container">
                 {listForDisplaying.map((element, key) => {
                     return (
                         <div key={key} className="list-item" onClick={() => this.handleClick(key)}>
-                            <img alt="" src={element.general.avatar} />
+                            <Image 
+                            alt="" src={element.general.avatar} 
+                            size="mini" rounded={true} avatar={true}/>
                             <div>
-                                <p>{element.general.firstName}</p>
+                                <b>{element.general.firstName}</b>
                                 <p>{element.job.title}</p>
                             </div>
                         </div>

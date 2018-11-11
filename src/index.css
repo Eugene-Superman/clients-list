@@ -12,3 +12,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.container {
+  margin: 40px auto;
+}
+.list-container {
+  padding-top: 10px;
+}
+.list-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px;
+}
+.list-item:hover {
+  cursor: pointer;
+  background-color: aliceblue;
+}

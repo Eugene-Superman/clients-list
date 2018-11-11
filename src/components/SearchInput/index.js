@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { searchClient } from '../../actions';
+import { Search } from 'semantic-ui-react'
 
 class SearchInput extends Component {
     handleChange(event){
@@ -9,7 +10,11 @@ class SearchInput extends Component {
     render(){
         return (
             <div>
-                <input type="text" onChange={this.handleChange.bind(this)} />
+                <Search
+                    type="text" 
+                    onSearchChange={this.handleChange.bind(this)}
+                    showNoResults={false}
+                />
             </div>
         )
     }
