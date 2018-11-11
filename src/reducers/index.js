@@ -1,7 +1,8 @@
-import { ADD_CLIENTS } from '../constants/action-types';
+import { ADD_CLIENTS, SELECT_CLIENT } from '../constants/action-types';
 
 const initialState = {
-    clients: []
+    clients: [],
+    clientIndex: null,
 }
 
 export const rootReducer = (state = initialState, action) => {
@@ -10,6 +11,11 @@ export const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 clients: action.payload
+            };
+        case SELECT_CLIENT:
+            return {
+                ...state,
+                clientIndex: action.payload
             };
         default: 
             return state;

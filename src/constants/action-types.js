@@ -1,1 +1,2 @@
 export const ADD_CLIENTS = "ADD_CLIENTS";
+export const SELECT_CLIENT = "SELECT_CLIENT";
