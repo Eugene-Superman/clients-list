@@ -4,8 +4,14 @@ import { Grid } from 'semantic-ui-react'
 
 class MainBlock extends Component {
     render(){
-        const { clientsList, clientIndex } = this.props;
-        let selectedClient = clientsList[clientIndex];
+        const { clientsList, clientIdentificator } = this.props;
+        let selectedClient;
+        for(var index in clientsList) {
+            if(clientsList[index].contact.email === clientIdentificator) {
+                selectedClient = clientsList[index];
+                break;
+            }
+        }
         if(selectedClient) 
             return(
                 <div>
@@ -37,7 +43,7 @@ class MainBlock extends Component {
 }
 const mapStateToProps = states => ({
     clientsList: states.clients,
-    clientIndex: states.clientIndex
+    clientIdentificator: states.clientIdentificator
 })
 
 export default connect(mapStateToProps)(MainBlock);

@@ -2,7 +2,7 @@ import { ADD_CLIENTS, SELECT_CLIENT, SEARCH_ITEM } from '../constants/action-typ
 
 const initialState = {
     clients: [],
-    clientIndex: null,
+    clientIdentificator: '',
     clientToSearch: '',
 }
 
@@ -16,7 +16,7 @@ export const rootReducer = (state = initialState, action) => {
         case SELECT_CLIENT:
             return {
                 ...state,
-                clientIndex: action.payload
+                clientIdentificator: action.payload
             };
         case SEARCH_ITEM:
             return {

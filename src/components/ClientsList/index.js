@@ -4,8 +4,8 @@ import { selectClient } from '../../actions';
 import { Image } from 'semantic-ui-react'
 
 class ClientsList extends Component {
-    handleClick(index){
-        this.props.selectClient(index);     
+    handleClick(userIdentification){
+        this.props.selectClient(userIdentification);     
     }
     render(){
         const { searchQuery, clients } = this.props;
@@ -34,7 +34,7 @@ class ClientsList extends Component {
             <div className="list-container">
                 {listForDisplaying.map((element, key) => {
                     return (
-                        <div key={key} className="list-item" onClick={() => this.handleClick(key)}>
+                        <div key={key} className="list-item" onClick={() => this.handleClick(element.contact.email)}>
                             <Image 
                             alt="" src={element.general.avatar} 
                             size="mini" rounded={true} avatar={true}/>
