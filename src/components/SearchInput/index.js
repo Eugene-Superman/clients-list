@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { searchClient } from '../../actions';
 import { Search } from 'semantic-ui-react'
@@ -23,5 +24,9 @@ class SearchInput extends Component {
 const mapDispatchToProps = {
     searchClient
 }
+
+SearchInput.propTypes = {
+    searchClient: PropTypes.func
+};
 
 export default connect(null, mapDispatchToProps)(SearchInput);;

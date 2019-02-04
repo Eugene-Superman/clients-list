@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from "react-redux";
 import { Grid } from 'semantic-ui-react'
 
@@ -45,5 +46,10 @@ const mapStateToProps = states => ({
     clientsList: states.clients,
     clientIdentificator: states.clientIdentificator
 })
+
+MainBlock.propTypes = {
+    clients: PropTypes.arrayOf(PropTypes.object),
+    clientIdentificator: PropTypes.string
+};
 
 export default connect(mapStateToProps)(MainBlock);

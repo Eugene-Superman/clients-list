@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addClients } from '../../actions';
 
@@ -41,5 +42,11 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
     addClients
 }
+
+Sidebar.propTypes = {
+    addClients: PropTypes.func,
+    clients: PropTypes.arrayOf(PropTypes.object)
+};
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);

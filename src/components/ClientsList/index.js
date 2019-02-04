@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { selectClient } from '../../actions';
 import { Image } from 'semantic-ui-react'
@@ -57,5 +58,10 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
     selectClient
 }
+
+ClientsList.propTypes = {
+    selectClient: PropTypes.func,
+    searchQuery: PropTypes.string
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ClientsList);;
